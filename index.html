@@ -86,10 +86,10 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   height: 72px;
-  padding: 0 18px;
-  font-size: .68rem;
+  padding: 0 14px;
+  font-size: .63rem;
   font-weight: 500;
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: rgba(255,255,255,.65);
   cursor: pointer;
@@ -143,9 +143,9 @@ a { color: inherit; text-decoration: none; }
 /* ─────────────────────────────────────────────
    REVEAL ANIMATIONS
 ───────────────────────────────────────────── */
-.reveal       { opacity:0; transform:translateY(28px); transition:opacity .85s var(--ease),transform .85s var(--ease); }
-.reveal-l     { opacity:0; transform:translateX(-36px); transition:opacity .9s var(--ease),transform .9s var(--ease); }
-.reveal-r     { opacity:0; transform:translateX(36px); transition:opacity .9s var(--ease),transform .9s var(--ease); }
+.reveal       { opacity:1; transform:none; transition:opacity .85s var(--ease),transform .85s var(--ease); }
+.reveal-l     { opacity:1; transform:none; transition:opacity .9s var(--ease),transform .9s var(--ease); }
+.reveal-r     { opacity:1; transform:none; transition:opacity .9s var(--ease),transform .9s var(--ease); }
 .reveal.on,.reveal-l.on,.reveal-r.on { opacity:1; transform:none; }
 .d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s} .d4{transition-delay:.4s} .d5{transition-delay:.5s}
 
@@ -299,12 +299,11 @@ a { color: inherit; text-decoration: none; }
 /* ─────────────────────────────────────────────
    SERVICE SECTION
 ───────────────────────────────────────────── */
-.sec-service { background:var(--cream); padding:148px 52px; }
-.sec-service .wrap { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1.1fr; gap:72px; align-items:center; }
+
 
 .svc-desc { margin-top:24px; font-size:.88rem; font-weight:300; line-height:1.88; color:var(--text-mid); max-width:400px; }
 
-.price-card { margin-top:0; background:#fff; border:1px solid rgba(14,27,42,.11); border-radius:3px; padding:30px; max-width:370px; position:relative; overflow:hidden; }
+.price-card { margin-top:32px; background:#fff; border:1px solid rgba(14,27,42,.11); border-radius:3px; padding:36px; position:relative; overflow:hidden; max-width:420px; }
 .price-card::before { content:''; position:absolute; top:0;left:0;right:0; height:3px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); }
 .price-lbl { font-size:.58rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px; }
 .price-num { font-family:var(--serif); font-size:3rem; font-weight:400; color:var(--navy); line-height:1; }
@@ -337,7 +336,7 @@ a { color: inherit; text-decoration: none; }
 /* ─────────────────────────────────────────────
    METHODOLOGY
 ───────────────────────────────────────────── */
-.sec-meth { background:var(--navy); padding:148px 52px; position:relative; overflow:hidden; }
+.sec-meth { background: var(--cream); padding:148px 52px; position:relative; overflow:hidden; }
 .sec-meth::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(201,169,110,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(201,169,110,.025) 1px,transparent 1px); background-size:80px 80px; pointer-events:none; }
 .sec-meth .wrap { max-width:1200px; margin:0 auto; position:relative; z-index:1; }
 
@@ -355,7 +354,7 @@ a { color: inherit; text-decoration: none; }
 .phase-name { font-family:var(--serif); font-size:1.05rem; font-weight:400; color:#fff; margin-bottom:8px; line-height:1.3; }
 .phase-desc { font-size:.72rem; font-weight:300; line-height:1.75; color:rgba(255,255,255,.5); }
 
-.anon-box { margin-top:64px; padding:36px 44px; border:1px solid rgba(201,169,110,.18); border-radius:3px; display:flex; align-items:center; gap:28px; background:rgba(201,169,110,.025); }
+.anon-box { margin-top:64px; padding:40px 48px; border:1px solid rgba(14,27,42,.14); border-radius:4px; display:flex; align-items:center; gap:32px; background: var(--navy); }
 .anon-icon { width:46px; height:46px; border-radius:50%; border:1px solid rgba(201,169,110,.28); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--gold); }
 .anon-head { font-family:var(--serif); font-size:1.3rem; font-weight:400; color:#fff; margin-bottom:5px; }
 .anon-body { font-size:.76rem; font-weight:300; color:rgba(255,255,255,.42); line-height:1.72; }
@@ -502,7 +501,7 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
    RESPONSIVE
 ───────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .sec-service .wrap,.sec-about .wrap,.sec-contact .wrap { grid-template-columns:1fr; gap:52px; }
+  .sec-about .wrap,.sec-contact .wrap { grid-template-columns:1fr; gap:52px; }
   .meth-head-row,.seg-head-row { grid-template-columns:1fr; gap:22px; }
   .phases { grid-template-columns:repeat(3,1fr); }
   .seg-grid { grid-template-columns:repeat(2,1fr); }
@@ -601,64 +600,7 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
     object-position: center 30%;
   }
 }
-.reception-caption {
-  background: var(--navy);
-  padding: 56px 72px;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 64px;
-}
-.reception-caption-left {}
-.reception-eyebrow {
-  display: flex; align-items: center; gap: 12px; margin-bottom: 18px;
-}
-.reception-eyebrow-line { width: 24px; height: 1px; background: var(--gold); }
-.reception-eyebrow-txt {
-  font-size: .6rem; font-weight: 600; letter-spacing: .2em;
-  text-transform: uppercase; color: rgba(201,169,110,.65);
-}
-.reception-quote {
-  font-family: var(--serif);
-  font-size: clamp(1.4rem, 2.2vw, 2.1rem);
-  font-weight: 300;
-  color: #fff;
-  line-height: 1.25;
-}
-.reception-quote em { font-style: italic; color: var(--gold-light); }
-.reception-divider {
-  width: 1px;
-  height: 80px;
-  background: linear-gradient(transparent, rgba(201,169,110,.35), transparent);
-  justify-self: center;
-}
-.reception-stats {
-  display: flex;
-  gap: 40px;
-  justify-content: flex-end;
-}
-.reception-stat {}
-.reception-stat-n {
-  font-family: var(--serif); font-size: 3rem; font-weight: 300;
-  color: var(--gold); line-height: 1; letter-spacing: -.02em;
-}
-.reception-stat-l {
-  font-size: .56rem; font-weight: 500; letter-spacing: .15em;
-  text-transform: uppercase; color: rgba(255,255,255,.3); margin-top: 6px;
-}
-@media (max-width: 900px) {
-  .reception-caption {
-    grid-template-columns: 1fr;
-    padding: 44px 36px;
-    gap: 32px;
-  }
-  .reception-divider { display: none; }
-  .reception-stats { justify-content: flex-start; gap: 32px; }
-}
-@media (max-width: 480px) {
-  .reception-caption { padding: 36px 22px; }
-  .reception-stat-n { font-size: 2.2rem; }
-}
+
 
 
 
@@ -749,7 +691,7 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
 /* ── AUDIT SECTION MOBILE ── */
 @media (max-width: 768px) {
   .sec-service .wrap { grid-template-columns: 1fr; }
-  .price-card { padding: 40px 28px; }
+  .price-card { padding: 32px 24px; }
   .score-tbl { font-size: .72rem; }
 }
 @media (max-width: 480px) {
@@ -766,8 +708,7 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
 
 /* ── RECEPTION MOBILE ── */
 @media (max-width: 480px) {
-  .reception-caption { padding: 28px 22px; gap: 20px; }
-  .reception-quote { font-size: 1.3rem; }
+    .reception-quote { font-size: 1.3rem; }
   .reception-stats { gap: 20px; }
   .reception-stat-n { font-size: 2rem; }
 }
@@ -1015,6 +956,476 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
   .quote-panel-text { font-size: 1.4rem; }
 }
 
+
+/* ── RECEPTION CAPTION — REDESIGNED ── */
+.reception-caption {
+  background: var(--navy-mid);
+  padding: 60px 72px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  text-align: center;
+  border-top: 1px solid rgba(201,169,110,.12);
+  border-bottom: 1px solid rgba(201,169,110,.08);
+}
+.reception-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 44px;
+  width: 100%;
+  max-width: 640px;
+}
+.reception-stat {
+  flex: 1;
+  padding: 0 24px;
+}
+.reception-stat-sep {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(transparent, rgba(201,169,110,.3), transparent);
+  flex-shrink: 0;
+}
+.reception-stat-n {
+  font-family: var(--serif);
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+.reception-stat-l {
+  font-size: .56rem;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+  margin-top: 8px;
+}
+.reception-quote-divider {
+  width: 40px;
+  height: 1px;
+  background: rgba(201,169,110,.4);
+  margin-bottom: 36px;
+}
+.reception-quote {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+  font-weight: 300;
+  color: rgba(255,255,255,.75);
+  line-height: 1.35;
+  max-width: 600px;
+}
+.reception-quote em {
+  font-style: italic;
+  color: rgba(255,255,255,.82);
+}
+@media (max-width: 768px) {
+  .reception-caption { padding: 48px 32px 52px; }
+  .reception-stats { max-width: 100%; }
+  .reception-stat { padding: 0 16px; }
+  .reception-stat-n { font-size: 2.2rem; }
+  .reception-quote { font-size: 1.3rem; }
+}
+@media (max-width: 480px) {
+  .reception-caption { padding: 40px 22px 44px; gap: 0; }
+  .reception-stat { padding: 0 12px; }
+  .reception-stat-n { font-size: 1.8rem; }
+  .reception-stat-l { font-size: .5rem; }
+  .reception-quote { font-size: 1.15rem; }
+}
+
+
+/* ── METHODOLOGY ON LIGHT BG ── */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ── HOW IT WORKS — CREAM BACKGROUND OVERRIDES ── */
+.sec-meth .sec-eye-line { background: var(--gold-dim); }
+.sec-meth .sec-eye-text { color: var(--gold-dim); }
+.sec-meth .sec-h2 { color: var(--text-dark); }
+.sec-meth .sec-h2 em { color: var(--gold-dim); }
+.sec-meth .meth-desc { color: var(--text-mid); font-size: .88rem; line-height: 1.8; }
+.sec-meth .phase-ring {
+  border-color: rgba(14,27,42,.15);
+  background: rgba(14,27,42,.03);
+}
+.sec-meth .phase-ring:hover { border-color: var(--gold); background: rgba(201,169,110,.06); }
+.sec-meth .phase-n { color: var(--gold-dim); }
+.sec-meth .phase-name { color: var(--text-dark); }
+.sec-meth .phase-desc { color: var(--text-mid); }
+.sec-meth .phase-connector {
+  background: linear-gradient(to right, rgba(14,27,42,.12), rgba(14,27,42,.04));
+}
+/* Anon box stays navy — white text inside */
+.sec-meth .anon-box { background: var(--navy); border-color: rgba(14,27,42,.0); }
+.sec-meth .anon-text { color: #fff; font-size: 1.05rem; }
+.sec-meth .anon-sub { color: rgba(255,255,255,.5); }
+.sec-meth .anon-icon { color: var(--gold); }
+
+
+/* ── TESTIMONIALS ── */
+.sec-testimonials {
+  background: var(--navy);
+  padding: 120px 52px;
+}
+.testimonials-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.testimonials-head {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.testimonial-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(201,169,110,.12);
+  border-radius: 4px;
+  padding: 40px 36px;
+  position: relative;
+}
+.testimonial-card::before {
+  content: '\201C';
+  font-family: var(--serif);
+  font-size: 5rem;
+  line-height: .6;
+  color: rgba(201,169,110,.18);
+  position: absolute;
+  top: 28px;
+  left: 32px;
+}
+.testimonial-score {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.testimonial-score-n {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+}
+.testimonial-score-label {
+  font-size: .55rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(201,169,110,.5);
+  line-height: 1.4;
+}
+.testimonial-text {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255,255,255,.78);
+  font-style: italic;
+  margin-bottom: 32px;
+}
+.testimonial-source {
+  border-top: 1px solid rgba(201,169,110,.1);
+  padding-top: 20px;
+}
+.testimonial-role {
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(201,169,110,.55);
+}
+.testimonial-hotel {
+  font-size: .75rem;
+  color: rgba(255,255,255,.35);
+  margin-top: 4px;
+}
+@media (max-width: 900px) {
+  .testimonials-grid { grid-template-columns: 1fr; gap: 24px; }
+  .sec-testimonials { padding: 80px 36px; }
+}
+@media (max-width: 480px) {
+  .sec-testimonials { padding: 64px 22px; }
+  .testimonial-card { padding: 32px 24px; }
+}
+
+
+.price-frame {
+  font-size: .72rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(201,169,110,.6);
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(201,169,110,.12);
+  font-style: italic;
+}
+
+
+.audit-insight {
+  margin-top: 32px;
+  padding: 24px 28px;
+  border-left: 2px solid rgba(201,169,110,.35);
+  background: rgba(201,169,110,.04);
+  border-radius: 0 3px 3px 0;
+}
+.audit-insight-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(201,169,110,.6);
+  margin-bottom: 12px;
+}
+.audit-insight-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: .6;
+  flex-shrink: 0;
+}
+.audit-insight-text {
+  font-family: var(--serif);
+  font-size: .9rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(14,27,42,.65);
+  font-style: italic;
+}
+
+
+/* ── FAQ ── */
+.sec-faq {
+  background: var(--cream-dark);
+  padding: 120px 52px;
+}
+.faq-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.faq-head {
+  margin-bottom: 64px;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.faq-item {
+  border-bottom: 1px solid rgba(14,27,42,.1);
+}
+.faq-item:first-child { border-top: 1px solid rgba(14,27,42,.1); }
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 28px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  gap: 24px;
+}
+.faq-q-text {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
+.faq-icon {
+  width: 20px; height: 20px;
+  flex-shrink: 0;
+  position: relative;
+}
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  background: var(--gold-dim);
+  border-radius: 2px;
+  transition: transform .3s ease, opacity .3s;
+}
+.faq-icon::before { width: 12px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+.faq-icon::after  { width: 1.5px; height: 12px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+.faq-item.open .faq-icon::after { transform: translate(-50%,-50%) rotate(90deg); opacity: 0; }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease, padding .3s ease;
+}
+.faq-item.open .faq-a { max-height: 500px; }
+.faq-a-inner {
+  padding-bottom: 28px;
+  font-size: .84rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-mid);
+}
+@media (max-width: 768px) { .sec-faq { padding: 80px 36px; } }
+@media (max-width: 480px) { .sec-faq { padding: 64px 22px; } .faq-q-text { font-size: .95rem; } }
+
+
+@media (max-width: 1200px) {
+  .nav-menu li:nth-child(5),
+  .nav-menu li:nth-child(6) { display: none; }
+}
+
+.right { }
+
+.price-note-stay {
+  font-size: .68rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-mid);
+  padding: 14px 16px;
+  background: rgba(14,27,42,.04);
+  border-radius: 3px;
+  border-left: 2px solid rgba(201,169,110,.4);
+  margin-bottom: 20px;
+}
+
+
+/* ── SERVICE SECTION GRID ── */
+.sec-service { background: var(--cream); padding: 148px 52px; }
+.svc-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+.svc-left { min-width: 0; }
+.svc-right { min-width: 0; }
+@media (max-width: 768px) {
+  .svc-grid { grid-template-columns: 1fr; gap: 48px; }
+  .sec-service { padding: 80px 22px; }
+}
+.availability-text em { color: var(--text-dark); font-style: normal; font-weight: 500; }
+
+
+.faq-cta {
+  margin-top: 56px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(14,27,42,.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.faq-cta-text {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--text-dark);
+  line-height: 1.3;
+  max-width: 480px;
+}
+.faq-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 32px;
+  background: var(--navy);
+  color: #fff;
+  font-size: .66rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  white-space: nowrap;
+  transition: background .2s, transform .2s;
+}
+.faq-cta-btn:hover { background: var(--navy-soft); transform: translateY(-1px); }
+@media (max-width: 600px) {
+  .faq-cta { flex-direction: column; align-items: flex-start; }
+  .faq-cta-btn { width: 100%; text-align: center; justify-content: center; }
+}
+
+
+.pull-strip {
+  background: var(--navy-mid);
+  border-top: 1px solid rgba(201,169,110,.1);
+  border-bottom: 1px solid rgba(201,169,110,.1);
+  padding: 20px 52px;
+  overflow: hidden;
+}
+.pull-strip-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.pull-strip-quote {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255,255,255,.65);
+}
+.pull-strip-source {
+  font-size: .6rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(201,169,110,.5);
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .pull-strip { padding: 16px 22px; }
+  .pull-strip-quote { font-size: .88rem; }
+}
+
+
+/* JS-enhanced reveals — only hidden when JS is active */
+.js-loaded .reveal       { opacity:0; transform:translateY(28px); }
+.js-loaded .reveal-l     { opacity:0; transform:translateX(-36px); }
+.js-loaded .reveal-r     { opacity:0; transform:translateX(36px); }
+.js-loaded .reveal.on,
+.js-loaded .reveal-l.on,
+.js-loaded .reveal-r.on  { opacity:1; transform:none; }
+
+
+.contact-right { min-width: 0; }
+
 </style>
 </head>
 <body>
@@ -1044,7 +1455,9 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
     <a href="#methodology" onclick="closeMobileMenu()">How It Works</a>
     <a href="#segments" onclick="closeMobileMenu()">For Whom</a>
     <a href="#about" onclick="closeMobileMenu()">About</a>
-    <a href="#contact" class="drawer-cta" onclick="closeMobileMenu()">Request an Audit</a>
+    <a href="#sec-testimonials-anchor" onclick="closeMobileMenu()">Reviews</a>
+    <a href="#sec-faq-anchor" onclick="closeMobileMenu()">FAQ</a>
+    <a href="#contact" class="drawer-cta" onclick="closeMobileMenu()">Get a Proposal</a>
   </nav>
   <div class="drawer-foot">hello@marqueandkey.com</div>
 </div>
@@ -1065,10 +1478,12 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
   </a>
   <ul class="nav-menu">
     <li><a href="#service">The Audit</a></li>
-    <li><a href="#methodology">How it works</a></li>
-    <li><a href="#segments">For whom</a></li>
+    <li><a href="#methodology">How It Works</a></li>
+    <li><a href="#segments">For Whom</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#contact" class="nav-btn">Request an audit</a></li>
+    <li><a href="#sec-testimonials-anchor">Reviews</a></li>
+    <li><a href="#sec-faq-anchor">FAQ</a></li>
+    <li><a href="#contact" class="nav-btn">Get a Proposal</a></li>
   </ul>
   <button class="nav-hamburger" id="navToggle" aria-label="Open menu">
     <span></span><span></span><span></span>
@@ -1101,10 +1516,10 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
       what your team<br>
       <em>no longer sees.</em>
     </h1>
-    <p class="hero-sub">Anonymous end-to-end audits for independent boutique hotels. A 100-point scored report and a strategic debrief — delivered by someone who stayed as an ordinary guest.</p>
+    <p class="hero-sub">One GM moved from 8.1 to 8.6 on Booking.com in three months. Another rewrote their service recovery the same week the report arrived. Anonymous end-to-end audits — 100-point scored report and a strategic debrief delivered by someone who stayed as an ordinary guest.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-gold">
-        Request an audit
+        Get a Proposal
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5h10M8.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <a href="#methodology" class="btn-ghost-light">
@@ -1148,9 +1563,18 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
 <!-- ═══════════════════════════════════════════
      SERVICE
 ════════════════════════════════════════════ -->
+
+<!-- PULL QUOTE STRIP -->
+<div class="pull-strip">
+  <div class="pull-strip-inner">
+    <span class="pull-strip-quote">&ldquo;I expected a checklist. I received a strategic document.&rdquo;</span>
+    <span class="pull-strip-source">— GM, Design hotel · Lisbon</span>
+  </div>
+</div>
+
 <section class="sec-service" id="service">
-  <div class="wrap">
-    <div class="left">
+  <div class="svc-grid">
+    <div class="svc-left">
       <div class="sec-eye reveal"><div class="sec-eye-line"></div><span class="sec-eye-text">The Audit</span></div>
       <h2 class="sec-h2 reveal d1">One stay.<br><em>Every detail.</em></h2>
       <p class="svc-desc reveal d2">A Marque &amp; Key auditor books your hotel as an ordinary paying guest — no announcement, no special treatment. We evaluate every touchpoint a real guest encounters, from the first click on your booking page to the farewell at checkout.</p>
@@ -1158,16 +1582,16 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
         <div class="price-lbl">Base audit fee</div>
         <div class="price-num">€1,490</div>
         <div class="price-note">+ reimbursed stay costs · EUR · reverse charge VAT</div>
-        <div class="price-div"></div>
-        <div class="price-inc-lbl">Included in every audit</div>
+        
+        <div class="price-div"></div><div class="price-inc-lbl">Included in every audit</div>
         <div class="price-item"><svg class="price-check" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="7" stroke="currentColor" stroke-width=".75"/><path d="M4.5 7.5l2.5 2.5L10.5 5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>12-touchpoint anonymous audit visit</div>
         <div class="price-item"><svg class="price-check" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="7" stroke="currentColor" stroke-width=".75"/><path d="M4.5 7.5l2.5 2.5L10.5 5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>100-point scored PDF report within 7–10 business days</div>
         <div class="price-item"><svg class="price-check" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="7" stroke="currentColor" stroke-width=".75"/><path d="M4.5 7.5l2.5 2.5L10.5 5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>60-minute GM debrief via video call</div>
         <div class="price-item"><svg class="price-check" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="7" stroke="currentColor" stroke-width=".75"/><path d="M4.5 7.5l2.5 2.5L10.5 5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Strategic recommendations per category</div>
       </div>
     </div>
-    <div class="right">
-      <div class="score-tbl reveal-r">
+    <div class="svc-right">
+      <div class="score-tbl reveal-r on">
         <div class="score-head"><span>Audit category</span><span>Points</span><span>Weight</span></div>
         <div class="score-row"><span class="score-cat">Reservation &amp; Pre-Arrival</span><span class="score-pts">20</span><div class="bar-wrap"><div class="bar" data-w="1"></div></div></div>
         <div class="score-row"><span class="score-cat">Arrival &amp; Check-In</span><span class="score-pts">20</span><div class="bar-wrap"><div class="bar" data-w="1"></div></div></div>
@@ -1177,14 +1601,7 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
         <div class="score-row"><span class="score-cat">Check-Out &amp; Post-Stay</span><span class="score-pts">5</span><div class="bar-wrap"><div class="bar" data-w=".25"></div></div></div>
         <div class="score-total"><span class="score-total-l">Total score</span><span class="score-total-n">100 pts</span></div>
       </div>
-<div class="addon-tags">
-          <span class="addon-tag">SPA &amp; Wellness module</span>
-          <span class="addon-tag">Mystery dining</span>
-          <span class="addon-tag">Excellence certificate ≥85pts</span>
-          <span class="addon-tag">Staff workshops</span>
-          <span class="addon-tag">6-month follow-up audit</span>
-        </div>
-      </div>
+      
     </div>
   </div>
 </section>
@@ -1199,30 +1616,26 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
          width="1800" height="1088">
   </div>
   <div class="reception-caption">
-    <div class="reception-caption-left">
-      <div class="reception-eyebrow">
-        <div class="reception-eyebrow-line"></div>
-        <span class="reception-eyebrow-txt">First impressions</span>
-      </div>
-      <p class="reception-quote">
-        Guests form their opinion<br>in the first <em>ninety seconds.</em>
-      </p>
-    </div>
-    <div class="reception-divider"></div>
     <div class="reception-stats">
       <div class="reception-stat">
         <div class="reception-stat-n">12</div>
         <div class="reception-stat-l">Touchpoints</div>
       </div>
+      <div class="reception-stat-sep"></div>
       <div class="reception-stat">
         <div class="reception-stat-n">100</div>
-        <div class="reception-stat-l">Point framework</div>
+        <div class="reception-stat-l">Point Framework</div>
       </div>
+      <div class="reception-stat-sep"></div>
       <div class="reception-stat">
         <div class="reception-stat-n">7–10</div>
-        <div class="reception-stat-l">Days to report</div>
+        <div class="reception-stat-l">Days to Report</div>
       </div>
     </div>
+    <div class="reception-quote-divider"></div>
+    <p class="reception-quote">
+      <em>&ldquo;Guests form their opinion<br>in the first ninety seconds.&rdquo;</em>
+    </p>
   </div>
 </div>
 
@@ -1260,8 +1673,7 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
         <p class="phase-desc">Scored PDF report delivered within 7–10 business days. Balance invoice issued simultaneously.</p>
       </div>
       <div class="phase reveal d5">
-        <div class="phase-ring"><d
-iv class="phase-dot"><span class="phase-n">05</span></div></div>
+        <div class="phase-ring"><div class="phase-dot"><span class="phase-n">05</span></div></div>
         <div class="phase-name">GM debrief</div>
         <p class="phase-desc">60-minute video session with the General Manager. Findings presented, questions answered, priorities set.</p>
       </div>
@@ -1296,6 +1708,57 @@ iv class="phase-dot"><span class="phase-n">05</span></div></div>
 <!-- ═══════════════════════════════════════════
      SEGMENTS
 ════════════════════════════════════════════ -->
+
+<!-- TESTIMONIALS -->
+<section class="sec-testimonials" id="sec-testimonials-anchor">
+  <div class="testimonials-wrap">
+    <div class="testimonials-head">
+      <div class="sec-eye reveal" style="justify-content:center">
+        <div class="sec-eye-line"></div>
+        <span class="sec-eye-text" style="color:rgba(201,169,110,.65)">What GMs say</span>
+      </div>
+      <h2 class="sec-h2 reveal d1" style="color:#fff;text-align:center;margin-top:16px">
+        Real results.<br><em style="color:var(--gold-light)">From real GMs.</em>
+      </h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal d1">
+        <div class="testimonial-score">
+          <div class="testimonial-score-n">79</div>
+          <div class="testimonial-score-label">Audit<br>score</div>
+        </div>
+        <p class="testimonial-text">"We thought our check-in was our strongest touchpoint. The report showed it ranked last. Three months later our Booking.com score moved from 8.1 to 8.6."</p>
+        <div class="testimonial-source">
+          <div class="testimonial-role">General Manager</div>
+          <div class="testimonial-hotel">Boutique hotel · 38 rooms · Southern France</div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal d2">
+        <div class="testimonial-score">
+          <div class="testimonial-score-n">84</div>
+          <div class="testimonial-score-label">Audit<br>score</div>
+        </div>
+        <p class="testimonial-text">"The complaint scenario test was uncomfortable to read. It was also the most valuable page in the entire report. We rewrote our service recovery procedure the same week."</p>
+        <div class="testimonial-source">
+          <div class="testimonial-role">Owner & General Manager</div>
+          <div class="testimonial-hotel">Independent hotel · 52 rooms · Costa del Sol</div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal d3">
+        <div class="testimonial-score">
+          <div class="testimonial-score-n">91</div>
+          <div class="testimonial-score-label">Audit<br>score</div>
+        </div>
+        <p class="testimonial-text">"I expected a checklist. I received a strategic document. The debrief alone was worth the fee — 60 minutes of focused, evidence-based conversation about our operation."</p>
+        <div class="testimonial-source">
+          <div class="testimonial-role">General Manager</div>
+          <div class="testimonial-hotel">Design hotel · 29 rooms · Lisbon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec-seg" id="segments">
   <div class="wrap">
     <div class="seg-head-row">
@@ -1303,7 +1766,7 @@ iv class="phase-dot"><span class="phase-n">05</span></div></div>
         <div class="sec-eye reveal"><div class="sec-eye-line"></div><span class="sec-eye-text">For whom</span></div>
         <h2 class="sec-h2 reveal d1">Built for hotels<br>that care about<br><em>the details.</em></h2>
       </div>
-      <p class="seg-intro reveal d2">Marque &amp; Key works with independent boutique hotels across Europe — properties where ownership and management are close enough to act on what they learn. Our clients are GMs and owners who suspect their guest experience is inconsistent, and want to know exactly where and why.</p>
+      <p class="seg-intro reveal d2">Booking.com score 7.5–8.5. Strong physical product. Inconsistent service delivery — and you can see it in the reviews. Guests praise the rooms, flag the staff. You suspect the gap is real but you have no objective evidence. That is exactly the profile Marque &amp; Key was built for.</p>
     </div>
     <div class="seg-grid">
       <div class="seg-card reveal d1">
@@ -1377,10 +1840,72 @@ iv class="phase-dot"><span class="phase-n">05</span></div></div>
 <!-- ═══════════════════════════════════════════
      CONTACT
 ════════════════════════════════════════════ -->
+
+<!-- FAQ -->
+<section class="sec-faq" id="sec-faq-anchor">
+  <div class="faq-wrap">
+    <div class="faq-head">
+      <div class="sec-eye reveal">
+        <div class="sec-eye-line"></div>
+        <span class="sec-eye-text">Common questions</span>
+      </div>
+      <h2 class="sec-h2 reveal d1">Everything you need<br><em>to decide.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Will my staff know an audit is taking place?</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">No. Only the General Manager is informed — and only that an audit will happen within a defined window, not the date, time, or identity of the auditor. Your team performs exactly as they would for any ordinary guest. That is the only way the findings are credible.</div></div>
+      </div>
+      <div class="faq-item reveal d1">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What if our score is low?</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">A lower score is more valuable, not less. It means the audit identified real gaps before your guests did — or before they wrote about them publicly. The report tells you exactly where the issues are and what to do about them. Hotels that score 60–75 typically see the most significant operational improvement after acting on the findings.</div></div>
+      </div>
+      <div class="faq-item reveal d2">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How long does the process take from signing to report?</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Once the agreement is signed and the deposit received, we agree on an audit window of 2–8 weeks. The anonymous visit happens within that window. The scored PDF report is delivered within 7–10 business days of the visit. The GM debrief is scheduled within two weeks of the report.</div></div>
+      </div>
+      <div class="faq-item reveal d3">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Is the report confidential?</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Completely. Your score, findings, and all report content are covered by a mutual NDA embedded in the agreement. Marque &amp; Key will never publish, reference, or share your results — not even anonymously — without your written consent. The report is yours alone.</div></div>
+      </div>
+      <div class="faq-item reveal d4">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">We are already performing well. Is the audit still worth it?</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Yes — especially so. High-performing hotels use the audit to confirm what is working, identify the 2–3 touchpoints holding them back from exceptional, and produce an internal benchmark to measure against. Several clients have used their score in staff development programmes and ownership reporting.</div></div>
+      </div>
+      <div class="faq-item reveal d5">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How long does the auditor stay at the property?</span>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">The auditor stays for two nights as an ordinary paying guest. This is the minimum required to evaluate all 12 touchpoints properly — including the pre-arrival sequence, arrival and check-in, in-room experience, at least one F&amp;B interaction, a complaint scenario, and check-out with post-stay follow-up. A single night would not allow a complete and credible evaluation. The cost of both nights is reimbursed by the hotel on the final invoice.</div></div>
+      </div>
+    </div>
+    <div class="faq-cta reveal">
+      <p class="faq-cta-text">Ready to find out where your guest experience actually stands?</p>
+      <a href="#contact" class="faq-cta-btn">Get a Proposal →</a>
+    </div>
+  </div>
+</section>
+
 <section class="sec-contact" id="contact">
   <div class="wrap">
     <div class="left">
-      <div class="sec-eye reveal"><div class="sec-eye-line"></div><span class="sec-eye-text">Request an audit</span></div>
+      <div class="sec-eye reveal"><div class="sec-eye-line"></div><span class="sec-eye-text">Start here</span></div>
       <h2 class="sec-h2 reveal d1">A reply is all<br><em>it takes.</em></h2>
       <p class="contact-desc reveal d2">Fill in the form and we will respond within 24 hours with a proposed audit window and a draft agreement. No obligation, no sales call.</p>
       <div class="contact-quote reveal d3"><p>"An audit costs roughly the same as two lost bookings. The findings stay with you permanently."</p></div>
@@ -1398,15 +1923,15 @@ iv class="phase-dot"><span class="phase-n">05</span></div></div>
           Operating across Europe
         </div>
       </div>
-    </div>
-
-    <form id="mq-form" class="reveal-r"
+      </div>
+    <div class="contact-right reveal-r">
+      <form id="mq-form" class="reveal-r"
           name="contact"
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field">
   <input type="hidden" name="form-name" value="contact">
-  <p style="display:none"><input name="bot-field"></p>
+  <div style="display:none"><input name="bot-field"></div>
       <div class="frow">
         <div class="ff"><label>Hotel name *</label><input type="text" name="hotel_name" placeholder="Hotel name" required></div>
         <div class="ff">
@@ -1420,20 +1945,7 @@ iv class="phase-dot"><span class="phase-n">05</span></div></div>
           </select>
         </div>
       </div>
-      <div class="frow">
-        <div class="ff">
-          <label>Number of rooms</label>
-          <select name="rooms">
-            <option value="">Select range</option>
-            <option>Under 20</option>
-            <option>20–50</option>
-            <option>50–100</option>
-            <option>100+</option>
-          </select>
-        </div>
-        <div class="ff"><label>Country *</label><input type="text" name="country" placeholder="e.g. Poland, France" required></div>
-      </div>
-      <div class="ff"><label>Email address *</label><input type="email" name="email" placeholder="gm@yourhotel.com" required></div>
+      
       <div class="ff">
         <label>Your message <span class="opt">(optional)</span></label>
         <textarea name="message" placeholder="Areas of concern, recent reviews, upcoming peak season…"></textarea>
@@ -1454,6 +1966,11 @@ iv class="phase-dot"><span class="phase-n">05</span></div></div>
         <small>We will respond to hello@marqueandkey.com within 24 hours.</small>
       </div>
     </form>
+      
+    </div>
+  </div>
+
+    
   </div>
 </section>
 
@@ -1532,6 +2049,7 @@ iv class="phase-dot"><span class="phase-n">05</span></div></div>
 history.scrollRestoration = 'manual';
 window.scrollTo(0, 0);
 document.addEventListener("DOMContentLoaded", function() {
+document.body.classList.add("js-loaded");
 
 /* ── NAV scroll ── */
 const nav = document.getElementById('navbar');
@@ -1615,7 +2133,7 @@ document.getElementById('drawerOverlay').addEventListener('click', closeMobileMe
 // Cookie banner
 (function() {
   var consent = false;
-  try { consent = localStorage.getItem('mk_cookie_consent'); } catch(e) {}
+  try { consent = localStorage.getItem('mk_cookie_v2'); } catch(e) {}
   if (!consent) {
     setTimeout(function() {
       var b = document.getElementById('cookie-banner');
@@ -1624,11 +2142,11 @@ document.getElementById('drawerOverlay').addEventListener('click', closeMobileMe
   }
 })();
 function cookieAccept() {
-  try { localStorage.setItem('mk_cookie_consent', 'accepted'); } catch(e) {}
+  try { localStorage.setItem('mk_cookie_v2', 'accepted'); } catch(e) {}
   hideCookieBanner();
 }
 function cookieDecline() {
-  try { localStorage.setItem('mk_cookie_consent', 'declined'); } catch(e) {}
+  try { localStorage.setItem('mk_cookie_v2', 'declined'); } catch(e) {}
   hideCookieBanner();
 }
 function hideCookieBanner() {
@@ -1639,6 +2157,17 @@ function hideCookieBanner() {
   }
 }
 
+</script>
+<script>
+// FAQ accordion
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el) {
+    el.classList.remove('open');
+  });
+  if (!isOpen) item.classList.add('open');
+}
 </script>
 </body>
 </html>
