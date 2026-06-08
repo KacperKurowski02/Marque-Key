@@ -776,15 +776,114 @@ footer { background:var(--navy); padding:52px 52px 36px; border-top:1px solid rg
   .sec-contact { padding: 64px 22px; }
 }
 
+
+/* ── COOKIE BANNER ── */
+#cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 999999;
+  background: var(--navy);
+  border-top: 1px solid rgba(201,169,110,.2);
+  padding: 28px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  transform: translateY(100%);
+  transition: transform .5s cubic-bezier(.4,0,.2,1);
+}
+#cookie-banner.visible { transform: translateY(0); }
+.cookie-text {
+  font-size: .72rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255,255,255,.55);
+  max-width: 680px;
+}
+.cookie-text strong {
+  display: block;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.cookie-text a {
+  color: rgba(201,169,110,.7);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cookie-text a:hover { color: var(--gold); }
+.cookie-actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+  align-items: center;
+}
+.cookie-btn {
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+  border: none;
+}
+.cookie-btn-accept {
+  background: var(--gold);
+  color: var(--navy);
+}
+.cookie-btn-accept:hover { background: var(--gold-light); }
+.cookie-btn-decline {
+  background: transparent;
+  color: rgba(255,255,255,.45);
+  border: 1px solid rgba(255,255,255,.15);
+}
+.cookie-btn-decline:hover {
+  color: rgba(255,255,255,.75);
+  border-color: rgba(255,255,255,.35);
+}
+@media (max-width: 768px) {
+  #cookie-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 22px;
+    gap: 20px;
+  }
+  .cookie-actions { width: 100%; }
+  .cookie-btn { flex: 1; text-align: center; }
+}
+
 </style>
 </head>
 <body>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" role="dialog" aria-label="Cookie notice">
+  <div class="cookie-text">
+    <strong>This website uses cookies</strong>
+    This site uses only essential cookies required for the contact form to function.
+    No tracking, no analytics, no advertising cookies are used.
+    By continuing to browse, you accept our use of essential cookies.
+    Read our <a href="#" onclick="openModal('privacy');return false;">Privacy Policy</a>
+    and <a href="#" onclick="openModal('terms');return false;">Terms of Use</a>.
+  </div>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-btn-decline" onclick="cookieDecline()">Decline</button>
+    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()">Accept</button>
+  </div>
+</div>
+
 
 <!-- MOBILE NAV DRAWER -->
 <div class="mobile-drawer" id="mobileDrawer">
   <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
   <nav class="drawer-nav">
-    <a href="#audit" onclick="closeMobileMenu()">The Audit</a>
+    <a href="#service" onclick="closeMobileMenu()">The Audit</a>
     <a href="#methodology" onclick="closeMobileMenu()">How It Works</a>
     <a href="#segments" onclick="closeMobileMenu()">For Whom</a>
     <a href="#about" onclick="closeMobileMenu()">About</a>
@@ -1127,8 +1226,12 @@ footer { background:var(--navy); padding:52px 52px 36px; border-top:1px solid rg
     </div>
 
     <form id="mq-form" class="reveal-r"
-          action="https://formspree.io/f/YOUR_FORM_ID"
-          method="POST">
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="contact">
+  <p style="display:none"><input name="bot-field"></p>
       <div class="frow">
         <div class="ff"><label>Hotel name *</label><input type="text" name="hotel_name" placeholder="Hotel name" required></div>
         <div class="ff">
@@ -1223,7 +1326,7 @@ footer { background:var(--navy); padding:52px 52px 36px; border-top:1px solid rg
       <h3>1. Data Controller</h3><p>The data controller is Marque &amp; Key sp. z o.o. (in registration), operating under the brand Marque &amp; Key, reachable at hello@marqueandkey.com.</p>
       <h3>2. What data we collect</h3><p>When you submit the contact form, we collect: hotel name, your role, email address, country, and any voluntary message content.</p>
       <h3>3. Purpose and legal basis</h3><p>Your data is processed solely to respond to your enquiry. The legal basis is your consent (Article 6(1)(a) GDPR). You may withdraw consent at any time by emailing hello@marqueandkey.com.</p>
-      <h3>4. How your data is stored</h3><p>Submissions are processed via Formspree (formspree.io), which forwards them to our email inbox. We do not maintain any additional database of enquiry data.</p>
+      <h3>4. How your data is stored</h3><p>Submissions are processed via Netlify Forms (netlify.com), which forwards them to our email inbox. We do not maintain any additional database of enquiry data.</p>
       <h3>5. Data retention</h3><p>Contact data is retained for the duration of any resulting engagement. If no contract is concluded, it is deleted within 12 months of initial contact.</p>
       <h3>6. Third-party sharing</h3><p>We do not sell or share your data for marketing. Data is not transferred outside the European Economic Area.</p>
       <h3>7. Your GDPR rights</h3><p>You have the right to access, rectify, or erase your data, and to lodge a complaint with a supervisory authority. Contact: hello@marqueandkey.com.</p>
@@ -1254,6 +1357,8 @@ footer { background:var(--navy); padding:52px 52px 36px; border-top:1px solid rg
 </div>
 
 <script>
+history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
 document.addEventListener("DOMContentLoaded", function() {
 
 /* ── NAV scroll ── */
@@ -1262,18 +1367,26 @@ window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY
 
 /* ── Reveal on scroll ── */
 const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } });
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.classList.add('on');
+    } else {
+      e.target.classList.remove('on');
+    }
+  });
 }, {threshold:.1, rootMargin:'0px 0px -48px 0px'});
 document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el => obs.observe(el));
 
 /* ── Score bars ── */
 const bobs = new IntersectionObserver(entries => {
   entries.forEach(e => {
+    const b = e.target;
     if(e.isIntersecting){
-      const b = e.target;
       b.style.width = (parseFloat(b.dataset.w)*100)+'%';
       setTimeout(()=>b.classList.add('on'),60);
-      bobs.unobserve(b);
+    } else {
+      b.classList.remove('on');
+      b.style.width = '0%';
     }
   });
 },{threshold:.3});
@@ -1284,19 +1397,30 @@ function openModal(id){ document.getElementById('modal-'+id).classList.add('open
 function closeModal(id){ document.getElementById('modal-'+id).classList.remove('open'); document.body.style.overflow=''; }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') document.querySelectorAll('.modal-overlay.open').forEach(m=>{ m.classList.remove('open'); document.body.style.overflow=''; }); });
 
-/* ── Form submit via Formspree AJAX ── */
+/* ── Form submit via Netlify Forms ── */
 document.getElementById('mq-form').addEventListener('submit', async e => {
   e.preventDefault();
   const btn = e.target.querySelector('button[type=submit]');
   btn.textContent = 'Sending…'; btn.style.opacity='.7'; btn.style.pointerEvents='none';
   try {
-    const r = await fetch(e.target.action, {method:'POST', body:new FormData(e.target), headers:{Accept:'application/json'}});
+    const formData = new FormData(e.target);
+    const r = await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    });
     if(r.ok){
       e.target.reset();
       e.target.querySelector('.form-foot').style.display='none';
       document.getElementById('form-ok').style.display='block';
-    } else { btn.textContent='Error — email us directly'; btn.style.opacity='1'; btn.style.pointerEvents='all'; }
-  } catch { btn.textContent='Error — email us directly'; btn.style.opacity='1'; btn.style.pointerEvents='all'; }
+    } else {
+      btn.textContent='Error - email us directly';
+      btn.style.opacity='1'; btn.style.pointerEvents='all';
+    }
+  } catch(err) {
+    btn.textContent='Error - email us directly';
+    btn.style.opacity='1'; btn.style.pointerEvents='all';
+  }
 });
 
 // Mobile drawer
@@ -1315,6 +1439,30 @@ document.getElementById('drawerOverlay').addEventListener('click', closeMobileMe
 
 
 });
+
+// Cookie banner
+(function() {
+  var consent = localStorage.getItem('mk_cookie_consent');
+  if (!consent) {
+    setTimeout(function() {
+      var b = document.getElementById('cookie-banner');
+      if (b) b.classList.add('visible');
+    }, 800);
+  }
+})();
+function cookieAccept() {
+  localStorage.setItem('mk_cookie_consent', 'accepted');
+  hideCookieBanner();
+}
+function cookieDecline() {
+  localStorage.setItem('mk_cookie_consent', 'declined');
+  hideCookieBanner();
+}
+function hideCookieBanner() {
+  var b = document.getElementById('cookie-banner');
+  if (b) { b.classList.remove('visible'); }
+}
+
 </script>
 </body>
 </html>
