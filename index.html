@@ -886,7 +886,16 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
 .photo-break {
   position: relative;
   overflow: hidden;
+  min-height: 420px;
+}
+
+.photo-break-img {
   display: block;
+  width: 100%;
+  height: auto;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: center 30%;
 }
 
 .photo-break-overlay {
@@ -914,7 +923,8 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
 }
 .photo-break-q em { font-style: italic; color: var(--gold-light); }
 @media (max-width: 640px) {
-  .photo-break { height: 380px; }
+  .photo-break { height: 380px; overflow: hidden; }
+  .photo-break-img { height: 380px; min-height: unset; }
   .photo-break-txt { padding: 32px 22px; }
 }
 
@@ -2048,6 +2058,14 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
 <script>
 history.scrollRestoration = 'manual';
 window.scrollTo(0, 0);
+
+// Global — must be accessible from onclick attributes in HTML
+function closeMobileMenu() {
+  document.getElementById('mobileDrawer').classList.remove('open');
+  document.getElementById('drawerOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 document.addEventListener("DOMContentLoaded", function() {
 document.body.classList.add("js-loaded");
 
@@ -2114,11 +2132,6 @@ document.getElementById('mq-form').addEventListener('submit', async e => {
 });
 
 // Mobile drawer
-function closeMobileMenu() {
-  document.getElementById('mobileDrawer').classList.remove('open');
-  document.getElementById('drawerOverlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
 document.getElementById('navToggle').addEventListener('click', function() {
   document.getElementById('mobileDrawer').classList.add('open');
   document.getElementById('drawerOverlay').classList.add('open');
