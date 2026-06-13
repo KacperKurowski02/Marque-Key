@@ -67,6 +67,7 @@ a { color: inherit; text-decoration: none; }
 .nav-menu .nav-btn { display: flex; align-items: center; height: 40px; margin-left: 12px; padding: 0 22px; background: var(--gold); color: var(--navy) !important; font-size: .66rem !important; font-weight: 700 !important; letter-spacing: .16em; border-radius: 2px; align-self: center; transition: background .2s, transform .15s; }
 .nav-menu .nav-btn::after { display: none !important; }
 .nav-menu .nav-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+@media (max-width: 1200px) { .nav-menu li:nth-child(5), .nav-menu li:nth-child(6), .nav-menu li:nth-child(7) { display: none; } }
 @media (max-width: 900px) { #navbar { padding: 0 24px; } .nav-menu a { padding: 0 10px; font-size: .61rem; } }
 @media (max-width: 680px) { .nav-menu { display: none; } }
 
@@ -178,6 +179,8 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
     <a href="../index.html#methodology">How It Works</a>
     <a href="../index.html#segments">For Whom</a>
     <a href="../index.html#about">About</a>
+    <a href="../index.html#sec-testimonials-anchor">Reviews</a>
+    <a href="../index.html#sec-faq-anchor">FAQ</a>
     <a href="./" class="active">Insights</a>
     <a href="../index.html#contact" class="drawer-cta">Get a Proposal</a>
   </nav>
@@ -198,8 +201,10 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
     <li><a href="../index.html">The Audit</a></li>
     <li><a href="../index.html#methodology">How It Works</a></li>
     <li><a href="../index.html#segments">For Whom</a></li>
-    <li><a href="../index.html#about">About</a></li>
     <li><a href="./" class="active">Insights</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#sec-testimonials-anchor">Reviews</a></li>
+    <li><a href="../index.html#sec-faq-anchor">FAQ</a></li>
     <li><a href="../index.html#contact" class="nav-btn">Get a Proposal</a></li>
   </ul>
   <button class="nav-hamburger" id="navToggle" aria-label="Open menu">
