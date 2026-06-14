@@ -624,6 +624,7 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
   /* But we don't want 60vh of just image. Use display:grid instead */
   display: grid;
   grid-template-columns: 1fr;
+  font-size: 0; /* hide stray text nodes inside the image container */
 }
 .reception-img {
   width: 100%;
@@ -631,6 +632,7 @@ footer { background:#0a1520; padding:64px 52px 40px; border-top:1px solid rgba(2
   display: block;
   filter: brightness(0.84) contrast(1.1) saturate(0.76);
 }
+.reception-quote { text-align:center; padding:28px 0 44px; font-size:1rem; font-weight:300; color:var(--text-mid); line-height:1.6; }
 @media (max-width: 600px) {
   .reception-img {
     object-fit: cover;
